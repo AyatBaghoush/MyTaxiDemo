@@ -18,7 +18,7 @@ jobs:
         command: yes | sdkmanager --licenses || true
     - run:
         name: chmod permissions
-        command: sudo chmod +x ./gradlew
+        command: chmod +x ./gradlew
     - run:
         name: Download Dependencies
         command: ./gradlew androidDependencies
