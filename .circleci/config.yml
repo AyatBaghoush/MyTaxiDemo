@@ -16,6 +16,10 @@ jobs:
                    sudo chmod +x ./gradlew
                    ./gradlew dependencies
           #- ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
       - store_artifacts:
           path: app/build/reports
           destination: reports
