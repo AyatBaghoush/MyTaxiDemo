@@ -30,7 +30,7 @@ jobs:
           command: sdkmanager --list --verbose | grep system-images
       - run:
           name: Setup Emulator
-          command: "platform-tools" "platforms;android-28"
+          command: sdkmanager "platform-tools" "platforms;android-28"
       - run:
           name: Launch Emulator
           command: |
