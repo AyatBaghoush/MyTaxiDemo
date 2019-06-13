@@ -43,7 +43,7 @@ jobs:
 
       - run:
           name: Run Espresso UI Tests
-          command: ./gradlew com.mytaxi.android_demo.Tests
+          command: ./gradlew Tests
       - store_artifacts:
           path: app/build/reports
           destination: reports
