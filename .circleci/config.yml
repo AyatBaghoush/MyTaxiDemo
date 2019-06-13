@@ -4,7 +4,8 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/android:api-27-alpha
-      
+    environment:
+      JVM_OPTS: -Xmx3200m  
     steps:
       - checkout
       - run: echo "hello"
@@ -28,6 +29,9 @@ jobs:
       - run:
           name: Show list of system-images
           command: sdkmanager --list --verbose | grep system-images
+      - run:
+          name: Setup emulator
+          command: sdkmanager "system-images;android-25;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n emulatorTest -k "system-images;android-25;google_apis;armeabi-v7a"
       - run:
           name: Launch Emulator
           command: |
