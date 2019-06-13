@@ -16,6 +16,3 @@ jobs:
                    sudo chmod +x ./gradlew
                    ./gradlew dependencies
           #- ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
-      - run:
-          name: Download Dependencies
-          command: ./gradllew androidDependencies
