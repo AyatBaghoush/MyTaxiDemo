@@ -2,7 +2,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/app
+    working_directory: ~/MyTaxiDemo/app
     docker:
     # Android the primary container
     - image: circleci/android:api-26-alpha
@@ -10,6 +10,7 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
     - checkout
+        path: ~/MyTaxiDemo
     - restore_cache:
         key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
     - run:
