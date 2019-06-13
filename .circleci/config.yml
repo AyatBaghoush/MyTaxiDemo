@@ -16,3 +16,6 @@ jobs:
                    sudo chmod +x ./gradlew
                    ./gradlew dependencies
           #- ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
