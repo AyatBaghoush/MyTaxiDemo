@@ -40,11 +40,7 @@ jobs:
           name: Launch emulator
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator -avd emulatorTest -noaudio -no-boot-anim -no-window -no-accel -memory 2048 -verbose &
           background: true
-      - run:
-          name: Wait emulator
-          command: |
-              circle-android wait-for-boot
-              adb shell input keyevent 82
+
       - run:
           name: Run Espresso UI Tests
           command: ./gradlew :app:connectedDebugAndroidTest
