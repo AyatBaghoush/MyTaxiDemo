@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/android:api-27-alpha
+      - image: circleci/android:api-28-alpha
       
     steps:
       - checkout
