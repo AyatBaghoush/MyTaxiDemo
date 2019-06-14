@@ -22,24 +22,7 @@ public class SearchRobotTest extends BaseTestRobot {
 
 
 
-    @Before
-    public void init(){
-
-       /* UiDevice uiDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
-        Point[] coordinates = new Point[4];
-        coordinates[0] = new Point(248, 1520);
-        coordinates[1] = new Point(248, 929);
-        coordinates[2] = new Point(796, 1520);
-        coordinates[3] = new Point(796, 929);
-        try {
-            if (!uiDevice.isScreenOn()) {
-                uiDevice.wakeUp();
-                uiDevice.swipe(coordinates, 10);
-            }
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }*/
-    }
+    
 
     /*Test Case: Validate user can search for a driver by name and call the driver
      *
@@ -53,8 +36,8 @@ public class SearchRobotTest extends BaseTestRobot {
     @Test
     public void testSearchForDriverAndCallDriver() {
 
-        searchRobotObject.EditSearchForDriver("Sa");
-        searchRobotObject.ChooseDriverFromList("Sarah Scott");
+        searchRobotObject.EditSearchForDriver(jsonDataReader.getSearchDriverInitials());
+        searchRobotObject.ChooseDriverFromList(jsonDataReader.getFullnameDriver());
 
         driverProfileObject.ClickCallDriverOverPhone();
 
