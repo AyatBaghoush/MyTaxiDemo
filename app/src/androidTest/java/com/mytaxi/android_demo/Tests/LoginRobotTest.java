@@ -30,10 +30,10 @@ public class LoginRobotTest extends BaseTestRobot {
     public void testLoginWithValidUserNameValidPassword() {
 
 
-        loginRobotObject.EditUsername("crazydog335");
-        loginRobotObject.EditPassword("venture");
+        loginRobotObject.EditUsername(jsonDataReader.getValidUsername());
+        loginRobotObject.EditPassword(jsonDataReader.getValidPassword());
         loginRobotObject.ClickLoginButton();
-        searchRobotObject.VerifySuccessfulLoginUsernameIsDisplayed("crazydog335");
+        searchRobotObject.VerifySuccessfulLoginUsernameIsDisplayed(jsonDataReader.getValidUsername());
 
     }
 
